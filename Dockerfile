@@ -1,10 +1,11 @@
 FROM ubuntu:14.04
 
-MAINTAINER docker@jftr.de
+MAINTAINER z3ntu
 
 # Prepare the Build Environment
 RUN apt-get update \
  && apt-get install -y \
+    vim \
     openjdk-7-jdk \
     git-core \
     gnupg \
@@ -43,10 +44,6 @@ ENV PATH /usr/local/repo/bin:$PATH
 RUN mkdir -p /var/fairphone_os/
 WORKDIR /var/fairphone_os/
 
-RUN mkdir -p /var/fairphone_deps/
-ADD get_and_build.sh /var/fairphone_deps/
-
-CMD ["/bin/bash", "/var/fairphone_deps/get_and_build.sh"]
 
 # Other commands can be executed with `docker run jftr/fairphone2-build-env <command>` or
 # you can work in an interactive shell with
