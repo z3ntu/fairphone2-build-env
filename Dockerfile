@@ -30,7 +30,6 @@ RUN apt-get update \
     make \
     python-networkx \
     ca-certificates \
-    bash \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
