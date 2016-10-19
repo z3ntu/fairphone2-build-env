@@ -30,6 +30,8 @@ RUN apt-get update \
     make \
     python-networkx \
     ca-certificates \
+    schedtool \
+    atool \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
