@@ -43,11 +43,5 @@ RUN mkdir -p /usr/local/repo/bin \
 ENV PATH /usr/local/repo/bin:$PATH
 
 # Create working directory
-RUN mkdir -p /var/fairphone_os/
-WORKDIR /var/fairphone_os/
-
-
-# Other commands can be executed with `docker run jftr/fairphone2-build-env <command>` or
-# you can work in an interactive shell with
-# `docker run -i -t jftr/fairphone2-build-env /bin/bash`
-
+RUN mkdir -p /var/android/
+WORKDIR /var/android/
