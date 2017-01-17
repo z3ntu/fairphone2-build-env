@@ -31,7 +31,7 @@ RUN apt-get update \
     python-networkx \
     ca-certificates \
     schedtool \
-    column \
+    bsdmainutils \
     atool \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
