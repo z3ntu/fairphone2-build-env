@@ -36,6 +36,9 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+# Work around 4+ year old Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/zlib/+bug/1155307
+RUN ln -s /usr/include/x86_64-linux-gnu/zconf.h /usr/include
+
 # Install repo
 RUN mkdir -p /usr/local/repo/bin \
  && curl --tlsv1 https://storage.googleapis.com/git-repo-downloads/repo > \
